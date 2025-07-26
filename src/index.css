@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face{
+    font-family:anzo1;
+    src:url(./src/assets/file.woff2)
+}
+
+@font-face{
+    font-family:anzo2;
+    src:url(./src/assets/anzo2.woff2)
+}
+
+@font-face{
+    font-family:anzo3;
+    src:url(./src/assets/anzo3.woff2)
+}
+
+#tilt{
+    width: fit-content;
+    transform:rotateY(50deg);
+}
+#page1-in{
+    position: relative;
+    perspective: 1000px;
+}
+
+#section2,#section3{
+    position: relative;
+    perspective: 2000px;
+}
