@@ -8,8 +8,7 @@ const Header = ({ onMenuClick }) => {
 
   return (
     <div className='lg:px-16 mt-3 fixed w-full z-50 p-5 sm:p-6 flex flex-row items-center justify-between space-x-2'>
-      <h1 className='text-4xl lg:text-5xl ml-3 font-extrabold text-white'>M.</h1>
-      <div>
+      <div className='absolute right-12 top-8'>
       <button
         onClick={() => {
           window.open(

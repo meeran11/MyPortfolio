@@ -4,7 +4,7 @@ const Bottom = () => {
   return (
 <footer
   id="contact"
-  className="w-scren flex flex-col items-center bg-zinc-50 text-center text-surface dark:bg-neutral-700 dark:text-white">
+  className="w-full overflow-x-hidden flex flex-col items-center bg-zinc-50 text-center text-surface dark:bg-neutral-700 dark:text-white">
   <div className="w-full px-6 pt-6 bg-black/50">
   <h1 className='text-lg uppercase mb-10 font-semiboldbold font-[anzo2]'>Contact ME</h1>
     <div className="mb-6 flex justify-center space-x-2">

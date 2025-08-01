@@ -4,17 +4,17 @@
 
 @font-face{
     font-family:anzo1;
-    src:url(./src/assets/file.woff2)
+    src:url(/assets/file.woff2)
 }
 
 @font-face{
     font-family:anzo2;
-    src:url(./src/assets/anzo2.woff2)
+    src:url(/assets/anzo2.woff2)
 }
 
 @font-face{
     font-family:anzo3;
-    src:url(./src/assets/anzo3.woff2)
+    src:url(/assets/anzo3.woff2)
 }
 
 #tilt{
@@ -29,4 +29,46 @@
 #section2,#section3{
     position: relative;
     perspective: 2000px;
+}
+
+/* Prevent horizontal scrolling globally */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Responsive improvements */
+@media (max-width: 640px) {
+  /* Improve touch targets on mobile */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better text scaling for mobile */
+  .text-responsive {
+    font-size: clamp(0.875rem, 4vw, 1.25rem);
+  }
+  
+  /* Improve spacing on mobile */
+  .mobile-spacing {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+}
+
+/* Smooth scrolling for better mobile experience */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better focus states for accessibility */
+button:focus, a:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Improve video performance on mobile */
+video {
+  will-change: transform;
 }

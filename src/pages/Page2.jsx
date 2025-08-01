@@ -24,7 +24,8 @@ const Page2 = () => {
   })
 
   return (
-    <div id='section2' className='bg-black text-center p-4 sm:p-16 text-white'><div className='rotateText'>
+    <div id='section2' className='w-full overflow-x-hidden bg-black text-center p-4 sm:p-16 text-white'>
+        <div className='rotateText'>
         <h1 className='mt-8 sm:mt-20 text-[16vw] sm:text-[40vw] leading-[14vw] sm:leading-[35vw] text-white font-[anzo1] uppercase'>impactful</h1>
         </div>
         <div className='rotateText'>

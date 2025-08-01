@@ -4,7 +4,7 @@ import 'remixicon/fonts/remixicon.css'
 const Skills = () => {
   const [open, setOpen] = useState({ prog: false, web: false });
   return (
-    <div id="skills" className="h-auto p-3 bg-white">
+    <div id="skills" className="h-auto w-full overflow-x-hidden p-3 bg-white">
       <div className="p-8 h-full w-full bg-black rounded-[20px] sm:rounded-[40px] flex flex-col items-center justify-center relative overflow-hidden">
         <video
           className="absolute w-full h-full object-cover opacity-40 z-0 pointer-events-none"

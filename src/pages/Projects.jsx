@@ -3,14 +3,14 @@ import 'remixicon/fonts/remixicon.css'
 
 const Page5 = () => {
   return (
-    <div id="projects" className="h-screen p-3 bg-white">
+    <div id="projects" className="h-screen w-full overflow-x-hidden p-3 bg-white">
     <div className="h-full w-full bg-black rounded-[40px] flex flex-col items-center justify-center relative overflow-hidden">
       <video
         className="absolute w-full h-full object-cover opacity-40 z-0"
         autoPlay
         loop
         muted
-        src="/src/assets/bg.mp4"
+        src="/assets/bg.mp4"
       ></video>
       <div className="relative z-10 flex flex-col items-center w-full h-full justify-center">
         <h1 className="text-8xl tracking-wide uppercase text-white font-[anzo1] m-0 text-center">
