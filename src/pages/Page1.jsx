@@ -29,7 +29,7 @@ const Page1 = () => {
       id="page1"
       className="relative min-h-screen w-full bg-white overflow-x-hidden flex items-stretch p-3"
     >
-      <div className="w-full h-full lg:h-screen rounded-[40px] bg-[url(../assets/bg.jpg)] p-4 flex flex-col justify-between" style={{ opacity: 1 }}>
+      <div className="w-full min-h-screen lg:h-screen rounded-[40px] bg-[url('/assets/bg.jpg')] p-4 flex flex-col justify-between" style={{ opacity: 1 }}>
         {/* Logo */}
         <div className="absolute top-8 left-10 text-white font-[Verdana] font-bold text-3xl sm:text-4xl lg:text-5xl">
           M.
@@ -47,7 +47,7 @@ const Page1 = () => {
             <img
               className="w-40 sm:w-56 md:w-72 lg:w-80 xl:w-96 aspect-square object-cover rounded-full shadow-lg ring-2 ring-yellow-500/40"
               src="/assets/image.png"
-              onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/assets/image.jpg'; }}
+              onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/assets/pic.png'; }}
               alt="Profile Graphic"
             />
           </div>

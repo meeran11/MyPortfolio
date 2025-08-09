@@ -11,7 +11,7 @@ const Skills = () => {
           autoPlay
           loop
           muted
-          src="/src/assets/bg.mov"
+          src="/assets/bg.mp4"
         ></video>
         <div className="relative z-10 flex flex-col items-center w-full h-full justify-center text-white uppercase px-2">
           <h1 className="tracking-wide uppercase text-white font-[anzo1] text-8xl sm:text-8xl md:text-8xl m-0 text-center mb-4 sm:mb-8">Skills</h1>
