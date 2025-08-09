@@ -5,43 +5,56 @@ import { gsap } from "gsap";
 import TiltText from "../components/TiltText";
 
 const Page1 = () => {
-  const [Xval, setXval] = useState(0)
-  const [Yval, setYval] = useState(0)
+  const [Xval, setXval] = useState(0);
+  const [Yval, setYval] = useState(0);
   const tiltRef = useRef(null);
+
   function movement(e) {
-    setXval((e.clientX - tiltRef.current.getBoundingClientRect().x - (tiltRef.current.getBoundingClientRect().width/2))/30)
-    setYval(-(e.clientY - tiltRef.current.getBoundingClientRect().y - (tiltRef.current.getBoundingClientRect().height/2))/30)
+    const rect = tiltRef.current.getBoundingClientRect();
+    setXval((e.clientX - rect.x - rect.width / 2) / 30);
+    setYval(-(e.clientY - rect.y - rect.height / 2) / 30);
   }
 
-
-  useGSAP(function(){
-    gsap.to(tiltRef.current,{
-      transform : `rotateX(${Yval}deg) rotateY(${Xval}deg)`,
-      duration : 3,
-      ease: 'elastic.out(1,0.3)'
-    })
-  },[Xval,Yval])
-
+  useGSAP(() => {
+    gsap.to(tiltRef.current, {
+      transform: `perspective(1000px) rotateX(${Yval}deg) rotateY(${Xval}deg)`,
+      duration: 1.2,
+      ease: "power2.out",
+    });
+  }, [Xval, Yval]);
 
   return (
     <div
-      onMouseMove={(e) => {
-        movement(e);
-      }}
+      onMouseMove={movement}
       id="page1"
-      className="relative flex flex-col sm:flex-row justify-between items-center overflow-hidden overflow-x-hidden h-screen w-full h-auto p-1.5 bg-white"
-    > 
-      <div className="h-full w-full px-3 rounded-[40px] bg-gradient-to-b from-[#06050f] via-[#302e2e] to-[#000000]">
-      <div className="fixed absolute top-12 left-12 text-white text-5xl font-bold">M.</div>
-      <div id="page1-in" className="relative z-20 w-full h-full flex flex-col items-center justify-between">
-        <div className="md:flex-col relative mb-2 2xl:p-20 h-full w-full lg:px-10 sm:flex justify-center sm:justify-between flex flex-col sm:flex-row items-center justify-center gap-2">
-          <div className="flex flex-col sm:flex-row items-center">
-            <TiltText abc={tiltRef}/>
-          </div>
-          <img className='md:h-[580px] md:w-[580px] md:justify-center absolute 2xl:h-[28rem] 2xl:w-[28rem] xl:h-96 xl:w-96 lg:h-64 lg:w-64 h-56 w-56 justify-center sm:mt-20 sm:-right-8 md:left-20 sm:-bottom-2' src="assets/pic.png" alt="" />
+      className="relative min-h-screen w-full bg-white overflow-x-hidden flex items-stretch p-3"
+    >
+      <div className="w-full h-full lg:h-screen rounded-[40px] bg-[url(../assets/bg.jpg)] p-4 flex flex-col justify-between" style={{ opacity: 1 }}>
+        {/* Logo */}
+        <div className="absolute top-8 left-10 text-white font-[Verdana] font-bold text-3xl sm:text-4xl lg:text-5xl">
+          M.
         </div>
+
+        {/* Main Hero Content */}
+        <div className="relative z-20 grid grid-cols-1 lg:grid-cols-2 items-center lg:justify-center gap-8 px-4 sm:px-8 lg:px-16 flex-1">
+          {/* Left: Tilt Text */}
+          <div className="mt-4 flex justify-center lg:justify-start">
+            <TiltText abc={tiltRef} />
+          </div>
+
+          {/* Right: Image */}
+          <div className="flex justify-center lg:justify-end">
+            <img
+              className="w-40 sm:w-56 md:w-72 lg:w-80 xl:w-96 aspect-square object-cover rounded-full shadow-lg ring-2 ring-yellow-500/40"
+              src="/assets/image.png"
+              onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/assets/image.jpg'; }}
+              alt="Profile Graphic"
+            />
+          </div>
+        </div>
+
+        {/* Footer */}
         <Page1Bottom />
-      </div>
       </div>
     </div>
   );

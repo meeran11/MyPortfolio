@@ -1,14 +1,9 @@
-import React from 'react'
-import 'remixicon/fonts/remixicon.css'
+import React from "react";
+import "remixicon/fonts/remixicon.css";
 
 const Header = ({ onMenuClick }) => {
-  function handleClick(){
-    if (onMenuClick) onMenuClick();
-  }
-
   return (
-    <div className='lg:px-16 mt-3 fixed w-full z-50 p-5 sm:p-6 flex flex-row items-center justify-between space-x-2'>
-      <div className='absolute right-12 top-8'>
+    <header className="fixed w-full top-3 z-50 px-6 py-4 flex items-center justify-end gap-1">
       <button
         onClick={() => {
           window.open(
@@ -16,18 +11,16 @@ const Header = ({ onMenuClick }) => {
             "_blank"
           );
         }}
-        className='lg:text-xl bg-black text-white text-base sm:text-lg px-3 sm:px-4 py-2 hover:bg-white hover:text-black rounded-full border-4 uppercase font-semibold'
+        className="px-5 py-2 bg-gray-200 text-black rounded-full border-2 border-black hover:bg-white hover:text-black font-semibold uppercase text-sm sm:text-base transition-all shadow-md"
       >
         Hire Me
       </button>
       <i
-        onClick={handleClick}
-        className="hover:text-black ri-more-2-fill text-2xl sm:text-3xl text-white cursor-pointer"
+        onClick={onMenuClick}
+        className="ri-more-2-fill text-white hover:text-yellow-400 text-2xl cursor-pointer transition-colors"
       ></i>
-      </div>
-    </div>
-  )
-}
+    </header>
+  );
+};
 
-
-export default Header 
+export default Header;
